@@ -1,0 +1,12 @@
+*
+!*.yaml
+!*.py
+!scenes
+!automations
+!custom_components
+!.gitignore
+!.travis.yml
+*.pyc
+__pycache__
+secrets.yaml
+known_devices.yaml

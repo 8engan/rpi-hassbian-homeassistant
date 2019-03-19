@@ -1,0 +1,117 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude 
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 39 
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+  # 2 factor auth
+  auth_mfa_modules:
+  - type: totp
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Show the introduction message on startup.
+#introduction:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+#Logger
+logger: 
+  default: warning
+  logs: 
+    pydeconz: debug
+    homeassistant.components.deconz: debug
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+    name: "Väder"
+    forecast: 24
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - cloudiness
+
+
+
+# Text to speech
+tts:
+  - platform: google
+
+# Vera controller
+vera:
+  vera_controller_url: !secret vera_url
+
+# Rfxtrx
+rfxtrx:
+  device: /dev/ttyUSB1
+
+# Sector Alarm
+sector_alarm:
+  email: !secret anders_email
+  password: !secret secalarm_pword
+  alarm_id: !secret secalarm_id 
+  code: !secret secalarm_pin 
+  #thermometers: true 
+  alarm_panel: true
+
+# Lovelace
+lovelace:
+  mode: yaml
+
+
+group: !include groups.yaml
+script: !include scripts.yaml
+scene: !include_dir_list scenes
+automation: !include_dir_list automations
+
+# Markiser
+cover:
+  - platform: rfxtrx
+    devices:
+      071a000002000002: # RFY 
+        name: somfy baksida
+      071a000001000001: # RFY 
+        name: somfy framsida
+
+# Sensor for keeping track of workdays
+binary_sensor:
+  - platform: workday
+    country: "SE"
+
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
+
+notify:
+  - name: pushbullet 
+    platform: pushbullet
+    api_key: !secret pushbullet_api_token
+  - name: markis_file
+    platform: file
+    filename: markis_tracker_file.csv
+  - name: slack
+    platform: slack
+    api_key: !secret slack_token
+    default_channel: '#klv77_homeassistant'
+
+http:
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  base_url: !secret base_url

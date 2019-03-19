@@ -1,0 +1,501 @@
+- name: "Julia sovdags"
+  entities:
+    light.julia_spot_hoger_1:
+      state: on
+      brightness: 10
+      color_temp: 454
+      transition: 0 
+    light.julia_spot_hoger_2: off
+    light.julia_spot_vanster_1: off
+    light.julia_spot_vanster_2: off
+    light.julia_spot_vanster_3: off
+    switch.molnlampa_28: off
+- name: "Julia vardag"
+  entities:
+    light.julia_spot_hoger_1:
+      state: on
+      color_temp: 300
+      brightness: 203
+      transition: 0 
+    light.julia_spot_hoger_2:
+      state: on
+      color_temp: 300
+      brightness: 203
+      transition: 0 
+    light.julia_spot_vanster_1:
+      state: on
+      color_temp: 300
+      brightness: 203
+      transition: 0 
+    light.julia_spot_vanster_2:
+      state: on
+      color_temp: 300
+      brightness: 203
+      transition: 0 
+    light.julia_spot_vanster_3:
+      state: on
+      color_temp: 300
+      brightness: 203
+      transition: 0 
+    switch.molnlampa_28: on
+- name: "Julia fokus"
+  entities:
+    light.julia_spot_hoger_1:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.julia_spot_hoger_2:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.julia_spot_vanster_1:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.julia_spot_vanster_2:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.julia_spot_vanster_3:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    switch.molnlampa_28: on
+- name: "Julia avkoppling"
+  entities:
+    light.julia_spot_hoger_1:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.julia_spot_hoger_2:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.julia_spot_vanster_1:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.julia_spot_vanster_2:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.julia_spot_vanster_3:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    switch.molnlampa_28: on
+- name: "Klara sovdags"
+  entities:
+    light.klara_spot_hoger_1:
+      state: on
+      brightness: 10
+      color_temp: 454
+      transition: 0 
+    light.klara_spot_hoger_2: off
+    light.klara_spot_vanster_1: off
+    light.klara_spot_vanster_2: off
+    light.lifx_ljusslinga:
+      state: on
+      rgb_color: [51,51,51] 
+      brightness: 15
+- name: "Klara vardag"
+  entities:
+    light.klara_spot_hoger_1:
+      state: on
+      color_temp: 320
+      brightness: 203
+      transition: 0 
+    light.klara_spot_hoger_2:
+      state: on
+      color_temp: 320
+      brightness: 203
+      transition: 0 
+    light.klara_spot_vanster_1:
+      state: on
+      color_temp: 320
+      brightness: 203
+      transition: 0 
+    light.klara_spot_vanster_2:
+      state: on
+      color_temp: 320
+      brightness: 203
+      transition: 0 
+    light.lifx_ljusslinga:
+      state: on
+      rgb_color: [241,224,181] 
+      brightness: 170
+      transition: 0 
+- name: "Klara fokus"
+  entities:
+    light.klara_spot_hoger_1:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.klara_spot_hoger_2:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.klara_spot_vanster_1:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.klara_spot_vanster_2:
+      state: on
+      color_temp: 270
+      brightness: 254
+      transition: 0 
+    light.lifx_ljusslinga:
+      state: on
+      rgb_color: [245,245,245] 
+      brightness: 220
+      transition: 0 
+- name: "Klara avkoppling"
+  entities:
+    light.klara_spot_hoger_1:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.klara_spot_hoger_2:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.klara_spot_vanster_1:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.klara_spot_vanster_2:
+      state: on
+      color_temp: 400
+      brightness: 154
+      transition: 0 
+    light.lifx_ljusslinga:
+      state: on
+      rgb_color: [239,210,117] 
+      brightness: 130
+      transition: 0 
+- name: "Nedervaning av"
+  entities:
+    light.dimmer_svarta_tavlan_5: off
+    light.dimmer_tavelvagg_matbord_31: off
+    light.dimmer_tavelvagg_tv_18: off
+    switch.lilla_bollen_7: off
+    switch.svarta_lampan_8: off
+    light.matbord_dimmer_14: off
+- name: "Godnatt"
+  entities:
+    group.downstairs_livingroom: off
+    group.fa_room: off
+    group.kitchen: off
+    group.upstairs_livingroom: off
+    light.dimmer_hall_39: off
+    group.pergola: off
+    group.hall: off
+- name: "Hela huset av"
+  entities:
+    group.downstairs_livingroom: off
+    group.fa_room: off
+    group.kitchen: off
+    group.julias_room: off
+    group.klaras_room: off
+    group.upstairs_livingroom: off
+    group.pergola: off
+- name: "Vardagsrum nere mys"
+  entities:
+    light.dimmer_svarta_tavlan_5:
+      state: on
+      brightness: 56
+      transition: 0 
+    light.dimmer_tavelvagg_matbord_31:
+      state: on
+      brightness: 76
+      transition: 0 
+    light.dimmer_tavelvagg_tv_18:
+      state: on
+      brightness: 51
+      transition: 0 
+    switch.lilla_bollen_7: on
+    switch.svarta_lampan_8: on
+    light.matbord_dimmer_14:
+      state: on
+      brightness: 70
+      transition: 0 
+    switch.svart_vipplampa_36: on
+- name: "Vardagsrum nere tv"
+  entities:
+    light.dimmer_tavelvagg_tv_18:
+      state: on
+      brightness: 51
+      transition: 0 
+    switch.lilla_bollen_7: on
+- name: "Vardagsrum nere på"
+  entities:
+    light.dimmer_svarta_tavlan_5:
+      state: on
+      brightness: 255
+      transition: 0 
+    light.dimmer_tavelvagg_matbord_31:
+      state: on
+      brightness: 255
+      transition: 0 
+    light.dimmer_tavelvagg_tv_18:
+      state: on
+      brightness: 255
+      transition: 0 
+    switch.lilla_bollen_7: on
+    switch.svarta_lampan_8: on
+    light.matbord_dimmer_14:
+      state: on
+      brightness: 255
+      transition: 0 
+    switch.svart_vipplampa_36: on
+    switch.ljusslinga_vardagsrum_50: on
+- name: "Vardagsrum nere grundbelysning"
+  entities:
+    light.dimmer_svarta_tavlan_5: off
+    light.dimmer_tavelvagg_matbord_31: off
+    light.dimmer_tavelvagg_tv_18: off
+    switch.lilla_bollen_7: on
+    switch.svarta_lampan_8: on
+    light.matbord_dimmer_14: off
+    switch.svart_vipplampa_36: off
+    switch.ljusslinga_vardagsrum_50: on
+- name: "Kök på"
+  entities:
+    light.kitchen_bulb_1:
+      state: on
+      brightness: 254
+      rgb_color: [241,224,181]
+      transition: 0 
+- name: "Kök vardagsmorgon"
+  entities:
+    light.kitchen_bulb_1:
+      state: on
+      brightness: 200
+      transition: 0 
+- name: "Kök fokus"
+  entities:
+    light.kitchen_bulb_1:
+      state: on
+      brightness: 254
+      transition: 0
+    switch.stars_30: on
+- name: "Kök mys"
+  entities:
+    light.kitchen_bulb_1:
+      state: on
+      brightness: 20
+      transition: 0 
+    switch.stars_30: on
+- name: "Övervåning mys"
+  entities: 
+    light.ballonglampa_2:
+      state: on
+      brightness: 30
+      transition: 0 
+    switch.svarta_skrivbordslampan_9: on
+    light.stora_bollen_2:
+      state: on
+      brightness: 100
+      color_temp: 400
+      transition: 0
+- name: "Övervåning på"
+  entities: 
+    light.ballonglampa_2:
+      state: on
+      brightness: 254
+      rgb_color: [239,210,117]
+      transition: 0 
+    switch.svarta_skrivbordslampan_9: on
+    light.stora_bollen_2:
+      state: on
+      brightness: 125
+      color_temp: 400
+      transition: 0 
+    switch.lilla_bollen_uppe:
+      state: on
+- name: "Övervåning av"
+  entities: 
+    group.fa_room: off
+    group.kitchen: off
+    group.julias_room: off
+    group.klaras_room: off
+    group.upstairs_livingroom: off
+- name: "Vardagsrum uppe tv"
+  entities:
+    light.stora_bollen_2:
+      state: on
+      brightness: 50
+      color_temp: 400
+      transition: 0
+- name: "Vardagsmorgon"
+  entities:
+    scene.overvaning_mys: on
+    scene.kok_vardagsmorgon: on
+    scene.vardagsrum_nere_grundbelysning: on
+    switch.ljusslingor_pergola_45: on
+    light.dimmer_hall_39:
+      state: on
+      brightness: 100
+      transition: 0
+    light.lilla_bollen_hall_6:
+      state: on
+      brightness: 254
+      transition: 0 
+- name: "FA vardag"
+  entities:
+    light.fa_spot_1_2:
+      state: on
+      brightness: 203
+      transition: 0 
+    light.fa_spot_2_2:
+      state: on
+      brightness: 203
+      transition: 0 
+    light.fa_spot_3_2:
+      state: on
+      brightness: 203
+      transition: 0 
+    light.fa_spot_4_2:
+      state: on
+      brightness: 203
+      transition: 0 
+    light.fa_bulb_1:
+      state: on
+      brightness: 203
+      rgb_color: [245,250,246]
+      transition: 0 
+    light.fa_bulb_2:
+      state: on
+      brightness: 203
+      rgb_color: [245,250,246]
+      transition: 0 
+    light.fa_bulb_3:
+      state: on
+      brightness: 203
+      transition: 0 
+- name: "FA fokus"
+  entities:
+    light.fa_spot_1_2:
+      state: on
+      brightness: 254
+    light.fa_spot_2_2:
+      state: on
+      brightness: 254
+    light.fa_spot_3_2:
+      state: on
+      brightness: 254
+    light.fa_spot_4_2:
+      state: on
+      brightness: 254
+    light.fa_bulb_1:
+      state: on
+      brightness: 254
+      rgb_color: [245,250,246]
+      transition: 0 
+    light.fa_bulb_2:
+      state: on
+      brightness: 254
+      rgb_color: [245,250,246]
+      transition: 0 
+    light.fa_bulb_3:
+      state: on
+      brightness: 254
+      transition: 0
+    switch.ljusslinga_bollar_38: on
+- name: "FA mys"
+  entities:
+    light.fa_spot_1_2:
+      state: on
+      brightness: 20
+      transition: 0 
+    light.fa_spot_2_2:
+      state: on
+      brightness: 20
+      transition: 0 
+    light.fa_spot_3_2:
+      state: on
+      brightness: 20
+      transition: 0 
+    light.fa_spot_4_2:
+      state: on
+      brightness: 20
+      transition: 0 
+    light.fa_bulb_1:
+      rgb_color: [239,210,117]
+      state: on
+      brightness: 50
+      transition: 0 
+    light.fa_bulb_2:
+      state: on
+      brightness: 50
+      rgb_color: [239,210,117]
+      transition: 0 
+    light.fa_bulb_3:
+      state: on
+      brightness: 50
+      transition: 0 
+    switch.ljusslinga_bollar_38: on
+- name: "Hus grundbelysning"
+  entities:
+    light.ballonglampa_2:
+      state: on
+      brightness: 30
+      transition: 0 
+    light.stora_bollen_2:
+      state: on
+      brightness: 100
+      rgb_color: [239,210,117]
+      transition: 0 
+    switch.lilla_bollen_7: on
+    switch.svarta_lampan_8: on
+    light.klara_spot_vanster_1:
+      state: on
+      rgb_color: [245,250,246]
+      brightness: 150
+      transition: 0 
+    light.klara_spot_vanster_2:
+      state: on
+      rgb_color: [245,250,246]
+      brightness: 150
+      transition: 0 
+    light.julia_spot_hoger_1:
+      state: on
+      rgb_color: [239,210,117]
+      brightness: 150
+      transition: 0 
+    light.julia_spot_hoger_2:
+      state: on
+      rgb_color: [239,210,117]
+      brightness: 150
+      transition: 0 
+    switch.ljusslinga_vardagsrum_50:
+      state: on
+    switch.stars_30:
+      state: on
+    switch.ljusslingor_pergola_45:
+      state: on
+- name: "Någon kommer hem"
+  entities:
+    light.dimmer_hall_39:
+      state: on
+      brightness: 200
+- name: "Pergola på"
+  entities:
+    switch.utebelysning_bak_44: on 
+    switch.ljusslingor_pergola_45: on
