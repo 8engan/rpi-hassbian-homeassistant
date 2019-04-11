@@ -1,0 +1,10 @@
+alias: Stänga av entrébelysning
+trigger:
+  platform: sun
+  event: sunrise
+  offset: '00:45:00'
+action:
+  - service: light.turn_off
+    entity_id: light.entrelampa 
+  - service: switch.turn_off
+    entity_id: switch.utebelysning_bak_44

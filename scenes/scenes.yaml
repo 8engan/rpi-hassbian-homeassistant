@@ -304,29 +304,21 @@
     switch.stars_30: on
 - name: "Övervåning mys"
   entities: 
-    light.ballonglampa_2:
+    light.ballonglampa:
       state: on
       brightness: 30
       transition: 0 
     switch.svarta_skrivbordslampan_9: on
-    light.stora_bollen_2:
+    switch.lilla_bollen_uppe:
       state: on
-      brightness: 100
-      color_temp: 400
-      transition: 0
 - name: "Övervåning på"
   entities: 
-    light.ballonglampa_2:
+    light.ballonglampa:
       state: on
       brightness: 254
       rgb_color: [239,210,117]
       transition: 0 
     switch.svarta_skrivbordslampan_9: on
-    light.stora_bollen_2:
-      state: on
-      brightness: 125
-      color_temp: 400
-      transition: 0 
     switch.lilla_bollen_uppe:
       state: on
 - name: "Övervåning av"
@@ -359,19 +351,19 @@
       transition: 0 
 - name: "FA vardag"
   entities:
-    light.fa_spot_1_2:
+    light.fa_spot_1:
       state: on
       brightness: 203
       transition: 0 
-    light.fa_spot_2_2:
+    light.fa_spot_2:
       state: on
       brightness: 203
       transition: 0 
-    light.fa_spot_3_2:
+    light.fa_spot_3:
       state: on
       brightness: 203
       transition: 0 
-    light.fa_spot_4_2:
+    light.fa_spot_4:
       state: on
       brightness: 203
       transition: 0 
@@ -391,16 +383,16 @@
       transition: 0 
 - name: "FA fokus"
   entities:
-    light.fa_spot_1_2:
+    light.fa_spot_1:
       state: on
       brightness: 254
-    light.fa_spot_2_2:
+    light.fa_spot_2:
       state: on
       brightness: 254
-    light.fa_spot_3_2:
+    light.fa_spot_3:
       state: on
       brightness: 254
-    light.fa_spot_4_2:
+    light.fa_spot_4:
       state: on
       brightness: 254
     light.fa_bulb_1:
@@ -420,19 +412,19 @@
     switch.ljusslinga_bollar_38: on
 - name: "FA mys"
   entities:
-    light.fa_spot_1_2:
+    light.fa_spot_1:
       state: on
       brightness: 20
       transition: 0 
-    light.fa_spot_2_2:
+    light.fa_spot_2:
       state: on
       brightness: 20
       transition: 0 
-    light.fa_spot_3_2:
+    light.fa_spot_3:
       state: on
       brightness: 20
       transition: 0 
-    light.fa_spot_4_2:
+    light.fa_spot_4:
       state: on
       brightness: 20
       transition: 0 

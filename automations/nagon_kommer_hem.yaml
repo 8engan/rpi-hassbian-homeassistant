@@ -1,0 +1,37 @@
+alias: "Någon kommer hem"
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.sector_alarm_02700305
+    #entity_id: input_boolean.secalarm_armedaway
+    from: 'armed_away'
+    to: 'disarmed'
+condition:
+  - condition: time
+    before: '22:00:00'
+    after: '07:00:00'
+  - condition: sun
+    after: sunset
+    after_offset: "-1:00:00"
+  - condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 5
+action:
+  - service: scene.turn_on
+    entity_id: scene.nagon_kommer_hem #scene.hus_grundbelysning
+  - service: scene.turn_on
+    entity_id: scene.julia_vardag
+  - service: scene.turn_on
+    entity_id: scene.klara_vardag
+  - service: scene.turn_on
+    entity_id: scene.kok_pa
+  - service: scene.turn_on
+    entity_id: scene.overvaning_pa
+  - service: scene.turn_on
+    entity_id: scene.vardagsrum_nere_mys
+  - service: scene.turn_on  
+    entity_id: scene.pergola_pa
+  - service: notify.pushbullet
+    data:
+      message: 'Någon kommer hem'
+

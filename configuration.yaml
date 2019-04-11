@@ -21,23 +21,35 @@ default_config:
 # Show the introduction message on startup.
 #introduction:
 
+# Enable discovery
+discovery:
+
+# ios
+ios:
+
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
 
-#Logger
+# Logger
 logger: 
   default: warning
   logs: 
     pydeconz: debug
     homeassistant.components.deconz: debug
 
+# Panel with icons
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
+
 # Sensors
 sensor:
   # Weather prediction
   - platform: yr
     name: "Väder"
-    forecast: 24
     monitored_conditions:
       - temperature
       - symbol
@@ -45,8 +57,9 @@ sensor:
       - windSpeed
       - pressure
       - cloudiness
-
-
+      - lowClouds
+  - platform: travisci
+    api_key: !secret git_token 
 
 # Text to speech
 tts:
@@ -66,13 +79,12 @@ sector_alarm:
   password: !secret secalarm_pword
   alarm_id: !secret secalarm_id 
   code: !secret secalarm_pin 
-  #thermometers: true 
+  thermometers: true 
   alarm_panel: true
 
 # Lovelace
 lovelace:
   mode: yaml
-
 
 group: !include groups.yaml
 script: !include scripts.yaml
@@ -87,17 +99,21 @@ cover:
         name: somfy baksida
       071a000001000001: # RFY 
         name: somfy framsida
+      071a000002000001: # RFY
+        name: somfy vardagsrum uppe
+      071a000002000003: # RFY
+        name: somfy fa sovrum
+      071a000001000002: # RFY
+        name: somfy kök
+      071a000001000003: # RFY
+        name: somfy klara
+      071a000001000004: # RFY
+        name: somfy julia
 
 # Sensor for keeping track of workdays
 binary_sensor:
   - platform: workday
     country: "SE"
-
-panel_iframe:
-  mdiindex:
-    title: MDI Icon Index
-    icon: mdi:vector-square
-    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
 
 notify:
   - name: pushbullet 
@@ -115,3 +131,4 @@ http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   base_url: !secret base_url
+

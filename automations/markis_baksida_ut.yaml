@@ -1,0 +1,30 @@
+- alias: Markiser ut baksida
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sun.sun
+  condition:
+    condition: and
+    conditions:
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      above: 5  ## Sun should be a bit above the horizon, not below
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.azimuth }}'
+      above: 78  ## Based on values captured
+    - condition: numeric_state
+      entity_id: sensor.vader_wind_speed
+      below: 1   ## Guesstimate
+    - condition: numeric_state
+      entity_id:  sensor.vader_precipitation
+      below: 0.1  ## no rain
+  action:
+    #- service: cover.set_cover_position
+    #  data:
+    #    entity_id: cover.level
+    #    position: 40
+    - service: notify.pushbullet
+      data:
+        message: 'Markiser ut baksida'
