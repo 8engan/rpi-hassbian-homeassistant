@@ -1,4 +1,4 @@
-alias: Stänga av entrébelysning
+alias: Stäng_av_entrébelysning
 trigger:
   platform: sun
   event: sunrise

@@ -1,4 +1,4 @@
-alias: "Alla borta"
+alias: Alla borta
 trigger:
   - platform: state
     entity_id: alarm_control_panel.sector_alarm_02700305

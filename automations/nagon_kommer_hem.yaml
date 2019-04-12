@@ -1,4 +1,4 @@
-alias: "Någon kommer hem"
+alias: Någon kommer hem
 trigger:
   - platform: state
     entity_id: alarm_control_panel.sector_alarm_02700305

@@ -16,7 +16,7 @@
       above: 78  ## Based on values captured
     - condition: numeric_state
       entity_id: sensor.vader_wind_speed
-      below: 1   ## Guesstimate
+      below: 2 # Guesstimate
     - condition: numeric_state
       entity_id:  sensor.vader_precipitation
       below: 0.1  ## no rain

@@ -1,4 +1,4 @@
-alias: "Tvättstuga vattenlarm"
+alias: Tvättstuga vattenlarm
 trigger:
   - platform: state
     entity_id: binary_sensor.tvattstuga_water_detector_76 

@@ -1,4 +1,4 @@
-alias: "Godnatt - kolla larm"
+alias: Godnatt - kolla larm
 trigger:
   - platform: event
     event_type: call_service
