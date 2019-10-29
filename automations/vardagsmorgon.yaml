@@ -1,16 +1,13 @@
 alias: Vardagsmorgon
 trigger:
   platform: time
-  at: "06:00:00"
+  at: "06:30:00"
 condition: 
   condition: and
   conditions:
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.override_vardagsmorgon
-      state: 'off'
     - condition: numeric_state
       entity_id: sun.sun
       value_template: '{{ state.attributes.elevation }}'
@@ -19,7 +16,8 @@ action:
   - service: homeassistant.turn_on
     entity_id: 
       - scene.vardagsmorgon
-  - service: notify.pushbullet
+      - scene.julia_vardag  
+      - scene.klara_vardag
+  - service: notify.slack
     data:
-      message: 'Vardagsmorgon triggered. Sun elevation = {{states.sun.sun.attributes.elevation}}' 
-
+      message: 'Vardagsmorgon automation triggad. Sun elevation = {{states.sun.sun.attributes.elevation}}'

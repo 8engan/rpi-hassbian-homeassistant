@@ -1,0 +1,12 @@
+alias: Tvattstuga vattenlarm
+trigger:
+  - platform: state
+    entity_id: sensor.tvattstuga_water_detector_76
+    to: 'on'
+action:
+  - service: notify.slack
+    data:
+      message: "Vattenlarm tvattstuga triggad."
+  - service: notify.pushbullet
+    data:
+      message: "Vattenlarm tvattstuga triggad."    

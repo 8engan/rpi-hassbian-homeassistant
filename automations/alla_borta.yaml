@@ -1,4 +1,4 @@
-alias: Alla borta
+alias: "Alla borta"
 trigger:
   - platform: state
     entity_id: alarm_control_panel.sector_alarm_02700305
@@ -6,14 +6,14 @@ trigger:
 action:
   - service: homeassistant.turn_off
     entity_id:
-      - group.julias_room
-      - group.klaras_room
+      - group.julias_rum
+      - group.klaras_rum
       - group.fa_room
       - group.upstairs_livingroom
       - group.downstairs_livingroom
       - group.kitchen
-      - light.dimmer_hall_39
-      - switch.ljusslingor_pergola_45
-  - service: notify.pushbullet
+      - group.hall
+      - group.pergola  
+  - service: notify.slack
     data:
-      message: 'Alla borta'
+      message: 'Alla borta, slacker ner'

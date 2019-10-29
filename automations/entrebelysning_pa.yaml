@@ -1,4 +1,4 @@
-alias: Sätta på entrébelysning
+alias: 'Satta pa entrebelysning'
 trigger:
   platform: sun
   event: sunset
@@ -8,4 +8,6 @@ action:
     entity_id: light.entrelampa
   - service: switch.turn_on
     entity_id: switch.utebelysning_bak_44
-
+  - service: notify.slack
+    data:
+      message: 'Entrebelysning pa' 

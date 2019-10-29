@@ -1,4 +1,4 @@
-alias: Godnatt - kolla larm
+alias: "Godnatt - kolla larm"
 trigger:
   - platform: event
     event_type: call_service
@@ -14,7 +14,7 @@ condition:
 action:
   - service: notify.pushbullet
     data:
-      message: 'Godnatt triggat: Larm inte påslaget'
+      message: 'Larm inte påslaget'
   - service: notify.slack
     data:
       message: 'Godnatt triggat: Larm inte påslaget'

@@ -1,0 +1,27 @@
+alias: Markis baksida ut
+trigger:
+  platform: state
+  entity_id: sun.sun
+condition: 
+  condition: and
+  conditions:
+  - condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.azimuth }}'
+    above: 55  
+    below: 100  
+  - condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    above: 3  ## Sun should be above the horizon, not below
+  - condition: state
+    entitiy_id: markis_baksida
+    state: 'off'
+action:
+  - service: notify.slack
+    data:
+      message: 'Markiser baksida ut'
+  - service: input_boolean.turn_on
+    data:
+      entity_id: markis_baksida
+

@@ -1,0 +1,12 @@
+alias: Kok vattenlarm
+trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_water_detector_42
+    to: 'on'
+action:
+  - service: notify.slack
+    data:
+      message: "Vattenlarm kok triggad."
+  - service: notify.pushbullet
+    data:
+      message: "Vattenlarm kok triggad."    

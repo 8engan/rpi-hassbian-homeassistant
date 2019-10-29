@@ -67,6 +67,7 @@ views:
         type: entities
         entities:
           - light.kitchen_bulb_1
+          - switch.lilla_bollen_kok
           - cover.somfy_kok
       - title: FA Sovrum
         type: entities
@@ -82,7 +83,7 @@ views:
       - title: Vardagsrum uppe
         type: entities
         entities:
-          - switch.lilla_bollen_uppe
+          - switch.svarta_lampan_uppe
           - switch.svarta_skrivbordslampan_9
           - cover.somfy_vardagsrum_uppe
       - title: Vardagsrum nere
@@ -108,6 +109,7 @@ views:
           - light.julia_spot_vanster_1
           - light.julia_spot_vanster_2
           - light.julia_spot_vanster_3
+          - switch.julia_ljusslinga  
           - cover.somfy_julia
       - title: Klaras rum
         type: entities
@@ -117,12 +119,19 @@ views:
           - light.klara_spot_hoger_2
           - light.klara_spot_vanster_1
           - light.klara_spot_vanster_2
+          - switch.bjornlampa
+          - light.klara_lifx  
           - cover.somfy_klara
       - title: Utomhus
         type: entities
         entities:
           - switch.ljusslingor_pergola_45
           - switch.utebelysning_bak_44
+      - title: Hall
+        type: entities
+        entities:
+          - light.silverlampa_hall_6
+          - light.dimmer_hall_39 
       - entity: alarm_control_panel.sector_alarm_02700305
         states:
           - arm_home
@@ -136,13 +145,12 @@ views:
         entities:
           - switch.kaninlampa_50
           - switch.lilla_bollen_fa_38
-          - switch.lilla_bollen_uppe
+          - switch.lilla_bollen_kok
           - switch.ljusslingor_pergola_45
           - switch.molnlampa_28
           - switch.outside_2_relay_43
-          - switch.stars_30
+          - switch.svarta_lampan_uppe
           - switch.svart_vipplampa_36
-          - switch.svarta_lampan_8
           - switch.svarta_skrivbordslampan_9
           - switch.utebelysning_bak_44
           - switch.verpan_7
@@ -153,6 +161,7 @@ views:
           - light.dimmer_hall_39
           - light.dimmer_svarta_tavlan_5
           - light.dimmer_tavelvagg_matbord_31
+          - light.matbord_dimmer_14
           - light.dimmer_tavelvagg_tv_18
           - light.entrelampa
           - light.fa_bulb_1 
@@ -171,6 +180,8 @@ views:
           - light.klara_spot_hoger_1
           - light.klara_spot_hoger_2
           - light.klara_spot_vanster_1
+          - light.klara_spot_vanster_2
+          - light.klara_lifx  
   - title: Scenes
     cards:
       - title: FA sovrum
@@ -243,12 +254,11 @@ views:
           - automation.alla_borta
           - automation.godnatt_kolla_larm
           - automation.ingen_hemma_satta_pa_grundbelysning
+          - automation.ingen_hemma_stang_av  
           - automation.nagon_kommer_hem
           - automation.satta_pa_entrebelysning
           - automation.stanga_av_entrebelysning
           - automation.vardagsmorgon
-          - automation.tvattstuga_vattenlarm
-          - automation.kok_vattenlarm
   - title: Media players
     cards:
       - title: Chromecasts
@@ -262,3 +272,13 @@ views:
           - media_player.tv_nere
           - media_player.tv_uppe
           - media_player.upstairs_google_mini 
+          - media_player.nesthub5891  
+  - title: Hub 
+    cards:
+      - title: scener 
+        type: entities
+        entities:
+          - scene.godnatt
+          - scene.pergola_pa
+          - scene.vardagsrum_nere_tv
+          - scene.vardagsrum_nere_grundbelysning  

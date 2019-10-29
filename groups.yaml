@@ -14,13 +14,16 @@ klaras_rum:
   - light.klara_spot_hoger_1
   - light.klara_spot_hoger_2
   - light.klara_spot_vanster_1
-  - light.klara_spot_hoger_2
+  - light.klara_spot_vanster_2
+  - light.klara_lifx  
+  - switch.kaninlampa_50  
 
 kitchen:
  name: "Kök"
  icon: mdi:food-fork-drink
  entities:
  - light.kitchen_bulb_1
+ - switch.lilla_bollen_kok  
 
 upstairs_livingroom:
  name: "Vardagsrum uppe"
@@ -28,7 +31,7 @@ upstairs_livingroom:
  entities:
  - light.ballonglampa
  - switch.svarta_skrivbordslampan_9
- - switch.lilla_bollen_uppe
+ - switch.svarta_lampan_uppe
 
 downstairs_livingroom:
  name: "Vardagsrum nere"
@@ -38,31 +41,9 @@ downstairs_livingroom:
  - light.dimmer_tavelvagg_matbord_31
  - light.dimmer_tavelvagg_tv_18
  - light.matbord_dimmer_14
- - switch.lilla_bollen_7
- - switch.svarta_lampan_8
  - switch.svart_vipplampa_36
- - light.stora_bollen
-
-
-julias_room:
- name: "Julias rum"
- icon: mdi:hotel
- entities:
- - light.julia_spot_vanster_3
- - light.julia_spot_hoger_1
- - light.julia_spot_hoger_2
- - light.julia_spot_vanster_1
- - light.julia_spot_vanster_2
- - switch.molnlampa_28
- 
-klaras_room:
- name: "Klaras rum"
- icon: mdi:hotel
- entities:
- - light.klara_spot_hoger_1
- - light.klara_spot_hoger_2
- - light.klara_spot_vanster_1
- - light.klara_spot_vanster_2
+ - switch.verpan_7
+ - light.molnlampa  
 
 fa_room:
  name: "Sovrum Frida o Anders"
@@ -75,7 +56,7 @@ fa_room:
  - light.fa_bulb_1
  - light.fa_bulb_2
  - light.fa_bulb_3
- - switch.lilla_bollen_fa_38
+
 entre:
  name: "Entré"
  icon: mdi:castle

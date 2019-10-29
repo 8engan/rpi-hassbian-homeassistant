@@ -1,0 +1,17 @@
+alias: 'Godnatt kolla Julias surplatta'
+trigger:
+  - platform: event
+    event_type: call_service
+    event_data:
+      service_data:
+        entity_id: scene.julia_avkoppling
+      domain: scene
+      service: turn_on
+condition:
+  - condition: numeric_state
+    entity_id: sensor.julipad_battery_level
+    below: 99 
+action:
+  service: notify.slack
+  data:
+    message: 'Julias surfplatta har lågt batter'

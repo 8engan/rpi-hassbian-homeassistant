@@ -1,10 +1,13 @@
-alias: Stäng_av_entrébelysning
+alias: 'Stanga av entrebelysning'
 trigger:
   platform: sun
   event: sunrise
   offset: '00:45:00'
 action:
   - service: light.turn_off
-    entity_id: light.entrelampa 
+    entity_id: light.entrelampa
   - service: switch.turn_off
     entity_id: switch.utebelysning_bak_44
+  - service: notify.slack
+    data:
+      message: 'Entrebelysning av' 

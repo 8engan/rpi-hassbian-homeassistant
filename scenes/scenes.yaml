@@ -10,6 +10,7 @@
     light.julia_spot_vanster_2: off
     light.julia_spot_vanster_3: off
     switch.molnlampa_28: off
+    switch.julia_ljusslinga: on
 - name: "Julia vardag"
   entities:
     light.julia_spot_hoger_1:
@@ -38,6 +39,7 @@
       brightness: 203
       transition: 0 
     switch.molnlampa_28: on
+    switch.julia_ljusslinga: on
 - name: "Julia fokus"
   entities:
     light.julia_spot_hoger_1:
@@ -65,7 +67,8 @@
       color_temp: 270
       brightness: 254
       transition: 0 
-    switch.molnlampa_28: on
+    switch.molnlampa_28: ona
+    switch.julia_ljusslinga: on
 - name: "Julia avkoppling"
   entities:
     light.julia_spot_hoger_1:
@@ -93,7 +96,6 @@
       color_temp: 400
       brightness: 154
       transition: 0 
-    switch.molnlampa_28: on
 - name: "Klara sovdags"
   entities:
     light.klara_spot_hoger_1:
@@ -104,10 +106,11 @@
     light.klara_spot_hoger_2: off
     light.klara_spot_vanster_1: off
     light.klara_spot_vanster_2: off
-    light.lifx_ljusslinga:
+    light.klara_lifx:
       state: on
-      rgb_color: [51,51,51] 
-      brightness: 15
+      color_temp: 400 
+      brightness: 50 
+    switch.bjornlampa: off  
 - name: "Klara vardag"
   entities:
     light.klara_spot_hoger_1:
@@ -130,11 +133,12 @@
       color_temp: 320
       brightness: 203
       transition: 0 
-    light.lifx_ljusslinga:
+    light.klara_lifx:
       state: on
       rgb_color: [241,224,181] 
       brightness: 170
       transition: 0 
+      switch.bjorlampa: on  
 - name: "Klara fokus"
   entities:
     light.klara_spot_hoger_1:
@@ -155,13 +159,14 @@
     light.klara_spot_vanster_2:
       state: on
       color_temp: 270
-      brightness: 254
+      brightness: 25:4
       transition: 0 
-    light.lifx_ljusslinga:
+    light.klara_lifx:
       state: on
       rgb_color: [245,245,245] 
       brightness: 220
-      transition: 0 
+      transition: 0
+    switch.bjornlampa: on  
 - name: "Klara avkoppling"
   entities:
     light.klara_spot_hoger_1:
@@ -184,7 +189,7 @@
       color_temp: 400
       brightness: 154
       transition: 0 
-    light.lifx_ljusslinga:
+    light.klara_lifx:
       state: on
       rgb_color: [239,210,117] 
       brightness: 130
@@ -197,6 +202,9 @@
     switch.lilla_bollen_7: off
     switch.svarta_lampan_8: off
     light.matbord_dimmer_14: off
+    switch.lilla_bollen_fa_38: off
+    switch.verpan_7: off
+    light.molnlampa: off
 - name: "Godnatt"
   entities:
     group.downstairs_livingroom: off
@@ -229,20 +237,28 @@
       state: on
       brightness: 51
       transition: 0 
-    switch.lilla_bollen_7: on
-    switch.svarta_lampan_8: on
     light.matbord_dimmer_14:
       state: on
       brightness: 70
       transition: 0 
     switch.svart_vipplampa_36: on
+    switch.verpan_7: on
+    light.molnlampa:
+      state: on
+      color_temp: 400
+      brightness: 13
+
 - name: "Vardagsrum nere tv"
   entities:
     light.dimmer_tavelvagg_tv_18:
       state: on
       brightness: 51
       transition: 0 
-    switch.lilla_bollen_7: on
+    switch.verpan_7: off
+    light.molnlampa: 
+      state: on
+      color_temp: 400
+      brightness: 13
 - name: "Vardagsrum nere på"
   entities:
     light.dimmer_svarta_tavlan_5:
@@ -257,31 +273,37 @@
       state: on
       brightness: 255
       transition: 0 
-    switch.lilla_bollen_7: on
-    switch.svarta_lampan_8: on
     light.matbord_dimmer_14:
       state: on
       brightness: 255
       transition: 0 
     switch.svart_vipplampa_36: on
-    switch.ljusslinga_vardagsrum_50: on
+    switch.verpan_7: on
+    light.molnlampa:
+      state: on
+      color_temp: 400
+      brightness: 160
 - name: "Vardagsrum nere grundbelysning"
   entities:
     light.dimmer_svarta_tavlan_5: off
     light.dimmer_tavelvagg_matbord_31: off
     light.dimmer_tavelvagg_tv_18: off
-    switch.lilla_bollen_7: on
     switch.svarta_lampan_8: on
     light.matbord_dimmer_14: off
     switch.svart_vipplampa_36: off
-    switch.ljusslinga_vardagsrum_50: on
+    switch.verpan_7: on
+    light.molnlampa: 
+      state: on
+      brightness: 50
+      color_temp: 400
 - name: "Kök på"
   entities:
     light.kitchen_bulb_1:
       state: on
       brightness: 254
       rgb_color: [241,224,181]
-      transition: 0 
+      transition: 0
+    switch.lilla_bollen_kok: on 
 - name: "Kök vardagsmorgon"
   entities:
     light.kitchen_bulb_1:
@@ -294,14 +316,14 @@
       state: on
       brightness: 254
       transition: 0
-    switch.stars_30: on
+    switch.lilla_bollen_kok: on
 - name: "Kök mys"
   entities:
     light.kitchen_bulb_1:
       state: on
       brightness: 20
       transition: 0 
-    switch.stars_30: on
+    switch.lilla_bollen_kok: on
 - name: "Övervåning mys"
   entities: 
     light.ballonglampa:
@@ -309,7 +331,7 @@
       brightness: 30
       transition: 0 
     switch.svarta_skrivbordslampan_9: on
-    switch.lilla_bollen_uppe:
+    switch.svarta_lampan_uppe:
       state: on
 - name: "Övervåning på"
   entities: 
@@ -319,7 +341,7 @@
       rgb_color: [239,210,117]
       transition: 0 
     switch.svarta_skrivbordslampan_9: on
-    switch.lilla_bollen_uppe:
+    switch.svarta_lampan_uppe:
       state: on
 - name: "Övervåning av"
   entities: 
@@ -345,7 +367,7 @@
       state: on
       brightness: 100
       transition: 0
-    light.lilla_bollen_hall_6:
+    light.silverlampa_hall_6:
       state: on
       brightness: 254
       transition: 0 
@@ -454,8 +476,7 @@
       brightness: 100
       rgb_color: [239,210,117]
       transition: 0 
-    switch.lilla_bollen_7: on
-    switch.svarta_lampan_8: on
+    switch.svarta_lampan_uppe: on
     light.klara_spot_vanster_1:
       state: on
       rgb_color: [245,250,246]
@@ -478,8 +499,6 @@
       transition: 0 
     switch.ljusslinga_vardagsrum_50:
       state: on
-    switch.stars_30:
-      state: on
     switch.ljusslingor_pergola_45:
       state: on
 - name: "Någon kommer hem"
@@ -487,6 +506,7 @@
     light.dimmer_hall_39:
       state: on
       brightness: 200
+    light.silverlampa_hall_6: on
 - name: "Pergola på"
   entities:
     switch.utebelysning_bak_44: on 

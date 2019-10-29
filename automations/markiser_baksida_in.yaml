@@ -1,0 +1,27 @@
+alias: Markis baksida in 
+trigger:
+  platform: state
+  entity_id: sun.sun
+condition: 
+  condition: and
+  conditions:
+  - condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.azimuth }}'
+    above: 140  
+  - condition: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    above: 10
+  - condition: state
+    entity_id: markis_baksida
+    state: 'on'
+    
+action:
+  - service: notify.slack
+    data:
+      message: 'Markiser baksida in'
+  - service: input_boolean.turn_off
+    data:
+      entity_id: markis_baksida    
+

@@ -1,8 +1,7 @@
-alias: Någon kommer hem
+alias: "Någon kommer hem"
 trigger:
   - platform: state
     entity_id: alarm_control_panel.sector_alarm_02700305
-    #entity_id: input_boolean.secalarm_armedaway
     from: 'armed_away'
     to: 'disarmed'
 condition:
@@ -31,7 +30,6 @@ action:
     entity_id: scene.vardagsrum_nere_mys
   - service: scene.turn_on  
     entity_id: scene.pergola_pa
-  - service: notify.pushbullet
+  - service: notify.slack
     data:
-      message: 'Någon kommer hem'
-
+      message: 'Någon kommer he triggad'

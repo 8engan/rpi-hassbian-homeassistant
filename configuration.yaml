@@ -18,25 +18,27 @@ homeassistant:
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-# Show the introduction message on startup.
-#introduction:
-
 # Enable discovery
 discovery:
 
 # ios
 ios:
 
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+# datadog
+datadog:
+  host: 192.168.1.150
+  port: 8125
+  prefix: casahaglund
 
 # Logger
 logger: 
   default: warning
-  logs: 
-    pydeconz: debug
-    homeassistant.components.deconz: debug
+  #logs: 
+  #  pydeconz: debug
+  #  homeassistant.components.deconz: debug
+
+# Track the sun  
+sun:
 
 # Panel with icons
 panel_iframe:
@@ -63,7 +65,8 @@ sensor:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Vera controller
 vera:
@@ -79,7 +82,6 @@ sector_alarm:
   password: !secret secalarm_pword
   alarm_id: !secret secalarm_id 
   code: !secret secalarm_pin 
-  thermometers: true 
   alarm_panel: true
 
 # Lovelace
@@ -132,3 +134,16 @@ http:
   ssl_key: !secret ssl_key
   base_url: !secret base_url
 
+input_boolean:
+  markis_baksida:
+    name: Boolean for markis baksida 
+    initial: off
+  markis_framsida: 
+    name: Boolean for markis framsida 
+    initial: off
+
+google_assistant:
+  project_id: !secret ga_project
+  api_key: !secret ga_homegraph_api_key
+  exposed_domains:
+    - scene
