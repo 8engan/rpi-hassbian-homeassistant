@@ -2,7 +2,7 @@ alias: Ingen hemma satta pa grundbelysning
 trigger:
   platform: sun
   event: sunset
-  offset: '-00:30:00'
+  offset: '-00:15:00'
 condition:
   condition: state
   entity_id: alarm_control_panel.sector_alarm_02700305

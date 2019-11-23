@@ -2,12 +2,10 @@ alias: 'Satta pa entrebelysning'
 trigger:
   platform: sun
   event: sunset
-  offset: '-01:00:00'
+  offset: '-00:15:00'
 action:
-  - service: light.turn_on
-    entity_id: light.entrelampa
-  - service: switch.turn_on
-    entity_id: switch.utebelysning_bak_44
+  - service: scene.turn_on 
+    entity_id: scene.entrebelysning_pa
   - service: notify.slack
     data:
       message: 'Entrebelysning pa' 

@@ -1,4 +1,4 @@
-alias: 'Godnatt kolla Julias surplatta'
+alias: 'Godnatt kolla Klaras surplatta'
 trigger:
   - platform: event
     event_type: call_service
@@ -11,12 +11,12 @@ condition:
   condition: and
   conditions:
     - condition: numeric_state
-      entity_id: sensor.juliapad_battery_level
+      entity_id: sensor.ipad_battery_level
       below: 99 
     - condition: state
-      entity_id: sensor.juliapad_battery_state
+      entity_id: sensor.ipad_battery_state
       state: 'Unplugged'
 action:
   - service: notify.slack
     data:
-      message: 'Julias surfplatta har lågt batteri: {{states("sensor.juliapad_battery_level")}}'
+      message: 'Klaras surfplatta har lågt batteri: {{states("sensor.ipad_battery_level")}}'
